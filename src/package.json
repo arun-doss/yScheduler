@@ -1,0 +1,14 @@
+{
+  "name": "yScheduler",
+  "version": "1.0",
+  "description": "Application to schedule and run tasks on Yamahaa AVR.",
+  "main": "./app.js",
+  "bin": "./app.js",
+  "dependencies": {
+    "cron": "^3.1.7",
+    "js-yaml": "^4.1.0"
+  },
+  "pkg": {
+    "targets": ["node18-linux-arm64", "node18-linux-x64", "node18-windows-x64", "node18-windows-arm64"]
+  }
+}

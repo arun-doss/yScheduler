@@ -1,6 +1,6 @@
-# YSchedule
+# ySchedule
 
-Bash script to schedule and run tasks on Yamahaa AVR. Currenlty configured with following functions:
+Application to schedule and run tasks on Yamahaa AVR. Currenlty configured with following functions:
 
  1. ALARM
 
@@ -21,23 +21,26 @@ Currently support is limited to linux, Kindly let me know if you need build for 
 
 - Make the YScheule file as executable
 ```chmod +x YShedule```
-- Add the required number of alarms with on and off times (in 24:00 hr format) as mentioned in the below sample settings.yaml
+- Add the required number of alarms with on and off times (in 24:00 hr format) as mentioned in the below sample settings.yaml([sample settings.yaml]((samples/settings.yaml)))
 ```
-#Sample for settings.yaml
+#Example for settings.yaml 
 
+#Sample for settings.yaml
+AVR IP: 192.168.18.2 #IP Address of your AVR
 ALARM:
     ALARM 1:
-        Start:14:00 #2:00 PM (Mandatory)
-        End:14:30 # (Optional, if skipped )
-        Frequency:Daily #Everyday (Optinal, default Daily)
+        Start: 14:00 #2:00 PM (Mandatory)
+        End:   14:30 # (Optional, if skipped no switch off)
+        Frequency:  Daily #Everyday (Optinal, default Daily)
 #        Frequency:Weekends #Saturday & Sunday
 #        Frequency:Weekdays #Monday to Friday
 #        Frequency:1111100 #Exact days of the week by 1 and 0's SMTWTFS - here it means Sunday - Thursday and skipping Friday and Saturdays
     Good Morning:
-        Start:05:00 
-        End:06:00
-```
+        Start:  06:00
 
+```
+- Run the ySchedule from the command prompt `sudo ./ySchedule`
+- You can also set it up as systemd service
 
 
 
